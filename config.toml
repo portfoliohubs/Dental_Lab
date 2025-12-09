@@ -1,0 +1,65 @@
+baseURL = "https://YOUR-USERNAME.github.io/LAB-REPO/"
+languageCode = "ar"
+title = "معمل برو-تك للأسنان | ProTech Dental Lab"
+theme = []
+
+enableInlineShortcodes = true
+[build]
+  writeStats = true
+
+# القوائم العلوية
+[[menu.main]]
+  name = "الرئيسية"
+  url = "#hero"
+  weight = 1
+[[menu.main]]
+  name = "خدماتنا"
+  url = "#services"
+  weight = 2
+[[menu.main]]
+  name = "معرض الأعمال"
+  url = "#gallery"
+  weight = 3
+[[menu.main]]
+  name = "تواصل معنا"
+  url = "#footer"
+  weight = 4
+
+# بيانات المعمل (المصدر الوحيد)
+[params]
+  description = "شريكك الموثوق لتركيبات الأسنان الرقمية بدقة الميكرون. نقدم حلولاً متكاملة لأطباء الأسنان."
+  # ألوان "Clinical Precision" (كحلي وفضي)
+  color_primary = "#0f172a"    # Navy Blue (الاحترافية)
+  color_secondary = "#e2e8f0"  # Platinum Silver (التكنولوجيا)
+  color_accent = "#3b82f6"     # Medical Blue (الثقة)
+  
+  # بيانات التواصل (B2B)
+  [params.contact]
+    phone = "+201000000000"
+    whatsapp = "201000000000"
+    address = "القاهرة، المنطقة الصناعية"
+    email = "lab@protech.com"
+
+  # 🛠️ قائمة الخدمات التفصيلية (للعرض في الـ Grid)
+  [[params.services]]
+    title = "التركيبات الثابتة"
+    icon = "fa-tooth"
+    description = "تاج وجسور بأعلى خامات الزيركون."
+    items = ["Full Zirconia", "E-max Crowns", "PFM (Porcelain Fused to Metal)", "Veneers & Lumineers"]
+
+  [[params.services]]
+    title = "التركيبات المتحركة"
+    icon = "fa-bony" # أو أيقونة مناسبة
+    description = "أطقم جزئية وكاملة مرنة ومريحة."
+    items = ["Flexible Dentures", "Acrylic Dentures", "Chrome Cobalt", "Night Guards"]
+
+  [[params.services]]
+    title = "زراعة الأسنان"
+    icon = "fa-screw"
+    description = "دعامات مخصصة وحلول فورية."
+    items = ["Custom Abutments", "Hybrid Dentures", "All-on-4 Bars", "Surgical Guides"]
+
+  # 🤝 إشارات الثقة (التقنيات المستخدمة)
+  [params.trust_signals]
+    title = "Powered By Technology"
+    logos = ["Exocad", "3Shape", "Formlabs", "Amann Girrbach"]
