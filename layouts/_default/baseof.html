@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" dir="rtl">
+{{ partial "head.html" . }}
+
+<body class="light-mode">
+    
+    {{ partial "header.html" . }}
+
+    <main id="main-content">
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    {{ partial "footer.html" . }}
+
+    <div class="floating-actions">
+        <a href="tel:{{ .Site.Params.contact.phone }}" class="float-btn call" aria-label="Call Lab">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+        <a href="https://wa.me/{{ .Site.Params.contact.whatsapp }}" target="_blank" class="float-btn whatsapp" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script>
+        // 1. Dark Mode Logic
+        const toggleBtn = document.getElementById('theme-toggle');
+        const body = document.body;
+        
+        // التحقق من التخزين المحلي
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.replace('light-mode', 'dark-mode');
+        }
+
+        if(toggleBtn){
+            toggleBtn.addEventListener('click', () => {
+                if (body.classList.contains('light-mode')) {
+                    body.classList.replace('light-mode', 'dark-mode');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    body.classList.replace('dark-mode', 'light-mode');
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+        }
+
+        // 2. Navbar Scroll Effect (تغيير لون الهيدر عند النزول)
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // 3. Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
