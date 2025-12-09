@@ -1,0 +1,24 @@
+<header class="header">
+    <div class="container navbar">
+        <a href="{{ .Site.BaseURL }}" class="logo">
+            <i class="fas fa-cubes"></i> <div>
+                <span class="font-tech" style="display: block; line-height: 1;">PRO-TECH</span>
+                <span style="font-size: 0.8rem; font-weight: normal; color: var(--color-muted);">DENTAL LAB</span>
+            </div>
+        </a>
+
+        <nav>
+            <ul class="nav-menu">
+                {{ range .Site.Menus.main }}
+                <li><a href="{{ .URL }}" class="nav-link">{{ .Name }}</a></li>
+                {{ end }}
+                
+                <li>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+                        <i class="fas fa-adjust"></i>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
