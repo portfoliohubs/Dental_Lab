@@ -1,0 +1,47 @@
+<div class="trust-bar">
+    <div class="container">
+        <div class="text-center" style="margin-bottom: 1.5rem; font-size: 0.9rem; color: var(--color-muted);">POWERED BY TECHNOLOGY</div>
+        <div class="partners-grid">
+            {{ range .Site.Params.trust_signals.logos }}
+            <div class="partner-logo">{{ . }}</div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+
+<footer class="footer" id="footer">
+    <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem;">
+            
+            <div>
+                <h3>عن المعمل</h3>
+                <p style="color: var(--color-muted); line-height: 1.8;">
+                    {{ .Site.Params.description }}
+                    <br>نحن نؤمن بأن الدقة هي سر النجاح في طب الأسنان الرقمي.
+                </p>
+            </div>
+
+            <div>
+                <h3>بيانات التواصل</h3>
+                <ul class="footer-info">
+                    <li><i class="fas fa-map-marker-alt text-accent"></i> {{ .Site.Params.contact.address }}</li>
+                    <li><i class="fas fa-phone text-accent"></i> <span class="font-tech" dir="ltr">{{ .Site.Params.contact.phone }}</span></li>
+                    <li><i class="fas fa-envelope text-accent"></i> {{ .Site.Params.contact.email }}</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>روابط سريعة</h3>
+                <ul class="footer-info">
+                    <li><a href="#services">خدماتنا</a></li>
+                    <li><a href="#gallery">معرض الأعمال</a></li>
+                    <li><a href="https://wa.me/{{ .Site.Params.contact.whatsapp }}">أرسل حالة (WhatsApp)</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="text-center" style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05); color: #555; font-size: 0.9rem;">
+            &copy; {{ now.Year }} {{ .Site.Title }}. All Rights Reserved.
+        </div>
+    </div>
+</footer>
