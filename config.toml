@@ -1,6 +1,6 @@
 baseURL = "https://portfoliohubs.github.io/Dental_Lab/"
 languageCode = "ar"
-title = "معمل برو-تك للأسنان | ProTech Dental Lab"
+title = "معمل برو-تك للأسنان | Pro_Tech Dental Lab"
 theme = []
 
 enableInlineShortcodes = true
